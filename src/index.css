@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *)); 
+@font-face {
+  font-family: 'ZZZ'; 
+  src: url('/src/assets/印品鸿蒙体.ttf') format('truetype');
+  font-weight: normal; /* Define font weight if applicable (e.g., normal, bold, 400, 700) */
+  font-style: normal;  /* Define font style if applicable (e.g., normal, italic) */
+  font-display: swap; /* Recommended for performance: loads text with a system font until your font is ready */
+}
+body {
+  font-family: 'ZZZ', sans-serif; /* Use your font family, with a fallback system font */
+}
