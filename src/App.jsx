@@ -7,6 +7,8 @@ import bot2 from '/src/assets/battleBots/bot2.mp4';
 import bot3 from '/src/assets/battleBots/bot3.mp4';
 import bot4 from '/src/assets/battleBots/bot4.mp4';
 
+import profileImage from '/src/assets/2x2.png';
+
 
 const App = () => {
   const [pdfLink, setPdfLink] = useState('');
@@ -76,7 +78,12 @@ const App = () => {
             <div className='flex-1 flex flex-col md:gap-2 items-start justify-start md:justify-start'>
               {/* Personal Info Row */}
               <div className={`${ltCont} ${ltTxt} ${ltBdr} w-full md:h-1/2 flex flex-row items-start justify-start md:items-center md:justify-center gap-2`}>
-                <div className='h-full max-h-[75%] ml-2 md:max-h-[85%] aspect-square rounded-full border-2 border-black self-center'></div>
+                <div className='h-full max-h-[75%] ml-2 md:max-h-[85%] aspect-square rounded-full border-2 border-black self-center'
+                style={{
+                  backgroundImage: `url(${profileImage})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                }}></div>
                 <div className='h-full w-full'>
                   <h1 className={`${ltCont} ${ltTxt} p-2 w-full text-md md:text-3xl lg:text-5xl font-bold`}>Cataquian, Ivan Joshua</h1>
                 </div>
@@ -110,8 +117,8 @@ const App = () => {
                 {/* Red Box */}
                 <div className=' w-full h-auto max-h-[50vh] flex-1 flex flex-row md:flex-col overflow-y-auto overflow-x-clip items-center justify-start'>
                   <div className={`w-full h-full flex flex-row overflow-y-auto`}>
-                    <p className='h-full w-1/2 md:w-full p-1 text-sm md:text-lg'>this is a test paragraph</p>
-                    <p className='h-full w-1/2 md:w-full p-1 text-sm md:text-lg'>this is a test paragraph</p>
+                    <p className='h-full w-1/2 md:w-full p-1 text-sm md:text-lg'> </p>
+                    <p className='h-full w-1/2 md:w-full p-1 text-sm md:text-lg'> </p>
                   </div>
                 </div>
               </div>
@@ -146,7 +153,7 @@ const App = () => {
               </div>
               <div className={`${ltCont} ${ltTxt} ${ltBdr} flex flex-col w-full md:w-[25%] h-[25%] md:h-full p-2 gap-2 items-center justify-center`}>
                 <div className='w-full h-full flex flex-row md:flex-col items-center justify-start gap-2 md:gap-6 overflow-x-auto md:overflow-x-hidden md:overflow-y-auto'>
-                    <button
+                  <button
                     className={`${btBase} w-auto min-w-[40%] md:max-w-[90%] h-auto min-h-[5vh]`}
                     onClick={() => handleButtonClick('certificate1')}>
                     IT Essentials: PC Hardware and Software
@@ -206,6 +213,15 @@ const App = () => {
                       <SlidingGallery items={viewSource} />
                     </div>
                   )}
+                  {viewType === 'pdf' && viewSource && (
+                    <iframe
+                      src={`https://drive.google.com/viewerng/viewer?embedded=true&url=${encodeURIComponent(viewSource)}`}
+                      width="100%"
+                      height="100%"
+                      title="PDF Viewer"
+                      frameBorder="0"
+                    ></iframe>
+                  )}
                   {!viewType && (
                     <div className={`${ltTxt} flex flex-col items-center justify-center`}>
                       <i className={`fa-solid fa-diagram-project text-5xl md:text-8xl`} aria-label="No certificate selected"></i>
@@ -226,6 +242,14 @@ const App = () => {
                     className={`${btDkBase} w-auto min-w-[20%] h-auto`}>
                     Battlebots
                   </button>
+
+                  <button
+                    onClick={() => handleViewChange('pdf', 'https://drive.google.com/uc?id=10DFK4uIDxNduGiW40fdPu21aZXP0tpK4&export=download')}
+                    className={`${btDkBase} w-auto min-w-[20%] h-auto`}
+                    >
+                    Sample PDF
+                    </button>
+
                 </div>
               </div>
             </div>

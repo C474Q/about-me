@@ -5,6 +5,7 @@
   -webkit-overflow-scrolling: touch;
   width: 100%; /* Ensure it takes full width of its parent */
   height: 100%; /* Ensure it takes full height of its parent */
+  flex-direction: row; /* Default to horizontal */
 }
 
 .sliding-gallery-item {
@@ -25,15 +26,34 @@
   object-fit: contain; /* Or 'cover' depending on desired behavior */
 }
 
-/* Adjust item width for larger screens if you want multiple visible */
+/* Make it vertical for cellphone screens */
+@media (max-width: 640px) {
+  .sliding-gallery-container {
+    flex-direction: column;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+  }
+
+  .sliding-gallery-item {
+    width: 100%; /* Each item takes full width */
+    height: 100%; /* Each item takes full height */
+    flex-shrink: 0; /* Prevent items from shrinking */
+    scroll-snap-align: start;
+  }
+}
+
+/* Adjust item width for larger screens if you want multiple visible horizontally */
 @media (min-width: 768px) {
   .sliding-gallery-item {
     width: 75%; /* Example: Show a larger portion on medium screens */
+    height: 100%; /* Maintain full height */
   }
 }
 
 @media (min-width: 1024px) {
   .sliding-gallery-item {
     width: 50%; /* Example: Show half on larger screens */
+    height: 100%; /* Maintain full height */
   }
 }
