@@ -122,19 +122,22 @@ const App = () => {
             <div className={`${mncontBase} flex flex-col md:flex-row gap-2`}>
               <div className={`${dkCont} ${dkTxt} ${dkBdr} p-2 flex flex-col w-full md:w-[75%] h-[75%] md:h-full items-start justify-start`}>
                 <h1 className='font-bold text-2xl md:text-3xl mb-2'> Academic Background / Qualifications</h1>
-                <div className={`${ltCont} ${ltTxt} ${ltBdr} w-full h-full flex flex-col items-center justify-center text-3xl`}>
-                      {/* Embed the PDF here */}
-                  {pdfLink ? (
-                    <iframe
-                      src={pdfLink}
-                      width="100%"
-                      height="100%"
-                      title="Certificate"
-                      frameBorder="0"
-                    ></iframe>
-                  ) : (
-                    <p>No certificate selected</p>
-                  )}
+                  <div className={`${ltCont} ${ltTxt} ${ltBdr} w-full h-full flex flex-col items-center justify-center text-3xl`}>
+                    {/* Embed the PDF here */}
+                    {pdfLink ? (
+                      <iframe
+                        src={pdfLink}
+                        width="100%"
+                        height="100%"
+                        title="Certificate"
+                        frameBorder="0"
+                      ></iframe>
+                    ) : (
+                      <div className={`${ltTxt} flex flex-col items-center justify-center`}>
+                        <i className={`fa-solid fa-file text-5xl md:text-8xl`} aria-label="No certificate selected"></i>
+                        <p className='md:text-2xl text-lg mt-2 md:mt-4'>No certificate selected</p>
+                      </div>
+                    )}
                 </div>
               </div>
               <div className={`${ltCont} ${ltTxt} ${ltBdr} flex flex-col w-full md:w-[25%] h-[25%] md:h-full p-2 gap-2 items-center justify-center`}>
@@ -214,7 +217,10 @@ const App = () => {
                 </div>
               )}
               {!viewType && (
-                <p className={`text-3xl`}>Select a project view from below</p>
+                <div className={`${ltTxt} flex flex-col items-center justify-center`}>
+                  <i className={`fa-solid fa-diagram-project text-5xl md:text-8xl`} aria-label="No certificate selected"></i>
+                  <p className='md:text-2xl text-lg mt-2 md:mt-4'>No project selected</p>
+                </div>
               )}
           </div>
 
@@ -222,7 +228,7 @@ const App = () => {
                 <button
                   onClick={() => handleViewChange('embed', 'https://mock-spcf-edu.netlify.app')}
                   className={`${btDkBase} w-auto min-w-[20%] h-auto`}>
-                  Website
+                  SPCF Website Frontend Improvement Mock-up
                 </button>
 
                 <button
