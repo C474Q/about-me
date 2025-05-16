@@ -1,0 +1,39 @@
+.sliding-gallery-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  width: 100%; /* Ensure it takes full width of its parent */
+  height: 100%; /* Ensure it takes full height of its parent */
+}
+
+.sliding-gallery-item {
+  flex: 0 0 auto;
+  width: 100%; /* Initially, each item takes full width */
+  height: 100%; /* Ensure items take full height */
+  scroll-snap-align: start;
+  padding: 10px; /* Optional padding */
+  display: flex; /* Center content if needed */
+  align-items: center;
+  justify-content: center;
+}
+
+.sliding-gallery-media {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Or 'cover' depending on desired behavior */
+}
+
+/* Adjust item width for larger screens if you want multiple visible */
+@media (min-width: 768px) {
+  .sliding-gallery-item {
+    width: 75%; /* Example: Show a larger portion on medium screens */
+  }
+}
+
+@media (min-width: 1024px) {
+  .sliding-gallery-item {
+    width: 50%; /* Example: Show half on larger screens */
+  }
+}

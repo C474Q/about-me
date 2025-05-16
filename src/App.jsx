@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
 import ThemeToggle from './ThemeToggle';
+import SlidingGallery from './SlidingGallery'; 
+
+import bot1 from '/src/assets/battleBots/bot1.jpg';
+import bot2 from '/src/assets/battleBots/bot2.mp4';
+import bot3 from '/src/assets/battleBots/bot3.mp4';
+import bot4 from '/src/assets/battleBots/bot4.mp4';
 
 
 const App = () => {
@@ -23,17 +29,15 @@ const App = () => {
 
   const [viewType, setViewType] = useState(null); // 'embed' or 'gallery'
   const [viewSource, setViewSource] = useState(null)
-
-  const gallery1 = [
-    'https://via.placeholder.com/300x200',
-    'https://via.placeholder.com/200x300',
-    'https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4',
-  ];
   
   const handleViewChange = (type, source) => {
     setViewType(type);
     setViewSource(source);
   };
+
+  const battleBots = [
+  bot1,bot2,bot3,bot4,
+  ];
 
   const btBase = 'bg-[#464847] dark:bg-[#d6ccc4] text-[#fbfbfb] dark:text-[#464847] hover:text-[#fbfbfb] hover:bg-[#a10a01] active:bg-[#780801] p-1 m-1 rounded-xl w-auto min-w-[20%] md:min-h-[20%] text-sm md:text-md lg:text-xl hover:scale-105 active:scale-95 ease-in-out transition-all duration-150 font-bold';
 
@@ -62,59 +66,59 @@ const App = () => {
 
       {/*Personal Information*/}
       <div className={bgBase}>
-  <div className="fixed md:top-5 md:right-5 top-1 right-1 z-50">
-    <ThemeToggle />
-  </div>
-
-  <div className='w-full h-full flex items-center justify-center'>
-    <div className={`${mncontBase} flex flex-col md:flex-row gap-2`}>
-      {/* First Column (Personal Info & Skills) */}
-      <div className='flex-1 flex flex-col md:gap-2 items-start justify-start md:justify-start'>
-        {/* Personal Info Row */}
-        <div className={`${ltCont} ${ltTxt} ${ltBdr} w-full md:h-1/2 flex flex-row items-start justify-start md:items-center md:justify-center gap-2`}>
-          <div className='h-full max-h-[75%] ml-2 md:max-h-[85%] aspect-square rounded-full border-2 border-black self-center'></div>
-          <div className='h-full w-full'>
-            <h1 className={`${ltCont} ${ltTxt} p-2 w-full text-md md:text-3xl lg:text-5xl font-bold`}>Cataquian, Ivan Joshua</h1>
-          </div>
+        <div className="fixed md:top-5 md:right-5 top-1 right-1 z-50">
+          <ThemeToggle />
         </div>
-        {/* Skills Row */}
-        <div className={`${dkCont} ${dkTxt} ${dkBdr} w-full md:h-1/2 flex flex-col items-start md:items-center p-2 gap-2`}>
-          <h1 className={`w-auto md:w-full md:h-auto text-2xl font-bold p-2`}>Skills</h1>
-          <div className='w-full h-full text-sm flex flex-col gap-2 overflow-y-auto max-h-[20vh] md:max-h-full'>
-            <div className='w-full h-full'>
-              <h2 className={`text-md md:text-xl font-bold`}>Networking & IT:</h2>
-              <p>Fundamental knowledge of Switching & Routing, PC Hardware, and Software Maintenance</p>
-              <h2 className={`text-md md:text-xl font-bold`}>Software & Tools:</h2>
-              <p>Skilled in MS Office Suite (Word, PowerPoint, Excel), Adobe Photoshop, and basic troubleshooting</p>
-              <h2 className={`text-md md:text-xl font-bold`}>Soft Skills:</h2>
-              <p>Excellent analytical and problem-solving skills, effective team collaboration, and adaptability</p>
-              <h2 className={`text-md md:text-xl font-bold`}>Additional:</h2>
-              <p>Quick learner with a strong passion for emerging technologies</p>
+
+        <div className='w-full h-full flex items-center justify-center'>
+          <div className={`${mncontBase} flex flex-col md:flex-row gap-2`}>
+            {/* First Column (Personal Info & Skills) */}
+            <div className='flex-1 flex flex-col md:gap-2 items-start justify-start md:justify-start'>
+              {/* Personal Info Row */}
+              <div className={`${ltCont} ${ltTxt} ${ltBdr} w-full md:h-1/2 flex flex-row items-start justify-start md:items-center md:justify-center gap-2`}>
+                <div className='h-full max-h-[75%] ml-2 md:max-h-[85%] aspect-square rounded-full border-2 border-black self-center'></div>
+                <div className='h-full w-full'>
+                  <h1 className={`${ltCont} ${ltTxt} p-2 w-full text-md md:text-3xl lg:text-5xl font-bold`}>Cataquian, Ivan Joshua</h1>
+                </div>
+              </div>
+              {/* Skills Row */}
+              <div className={`${dkCont} ${dkTxt} ${dkBdr} w-full md:h-1/2 flex flex-col items-start md:items-center p-2 gap-2`}>
+                <h1 className={`w-auto md:w-full md:h-auto text-2xl font-bold p-2`}>Skills</h1>
+                <div className='w-full h-full text-sm flex flex-col gap-2 overflow-y-auto max-h-[20vh] md:max-h-full'>
+                  <div className='w-full h-full'>
+                    <h2 className={`text-md md:text-xl font-bold`}>Networking & IT:</h2>
+                    <p>Fundamental knowledge of Switching & Routing, PC Hardware, and Software Maintenance</p>
+                    <h2 className={`text-md md:text-xl font-bold`}>Software & Tools:</h2>
+                    <p>Skilled in MS Office Suite (Word, PowerPoint, Excel), Adobe Photoshop, and basic troubleshooting</p>
+                    <h2 className={`text-md md:text-xl font-bold`}>Soft Skills:</h2>
+                    <p>Excellent analytical and problem-solving skills, effective team collaboration, and adaptability</p>
+                    <h2 className={`text-md md:text-xl font-bold`}>Additional:</h2>
+                    <p>Quick learner with a strong passion for emerging technologies</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Second Column (Personal Background) */}
+            <div className={`${ltCont} ${ltTxt} md:w-1/2 flex flex-col items-center justify-start`}>
+              <h1 className={`${dkCont} ${dkTxt} rounded-sm w-full p-2 font-black text-xl md:text-3xl`}>Personal Background</h1>
+              <div className='w-full h-full p-2 gap-2 flex flex-col md:flex-col items-center justify-start overflow-y-auto'> {/* Changed to flex-col */}
+                {/* Yellow Box */}
+                <div className='w-full h-auto max-h-[50vh] flex-1 flex flex-col overflow-y-auto overflow-x-clip p-1 gap-0.5 items-start justify-start'>
+                  <p className='h-auto w-full p-2 text-[2vh] md:text-lg'>A motivated Computer Engineering graduate from Holy Angel University with a strong foundation in programming (Java, C++, Python) and network systems. Eager to contribute to projects involving software development, network security, and system troubleshooting. Committed to applying technical skills and continuously learning to deliver impactful solutions in a professional environment.</p>
+                </div>
+                {/* Red Box */}
+                <div className=' w-full h-auto max-h-[50vh] flex-1 flex flex-row md:flex-col overflow-y-auto overflow-x-clip items-center justify-start'>
+                  <div className={`w-full h-full flex flex-row overflow-y-auto`}>
+                    <p className='h-full w-1/2 md:w-full p-1 text-sm md:text-lg'>this is a test paragraph</p>
+                    <p className='h-full w-1/2 md:w-full p-1 text-sm md:text-lg'>this is a test paragraph</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-
-      {/* Second Column (Personal Background) */}
-      <div className={`${ltCont} ${ltTxt} md:w-1/2 flex flex-col items-center justify-start`}>
-        <h1 className={`${dkCont} ${dkTxt} rounded-sm w-full p-2 font-black text-xl md:text-3xl`}>Personal Background</h1>
-        <div className='w-full h-full p-2 gap-2 flex flex-col md:flex-col items-center justify-start overflow-y-auto'> {/* Changed to flex-col */}
-          {/* Yellow Box */}
-          <div className='w-full h-auto max-h-[50vh] flex-1 flex flex-col overflow-y-auto overflow-x-clip p-1 gap-0.5 items-start justify-start'>
-            <p className='h-auto w-full p-2 text-[2vh] md:text-lg'>A motivated Computer Engineering graduate from Holy Angel University with a strong foundation in programming (Java, C++, Python) and network systems. Eager to contribute to projects involving software development, network security, and system troubleshooting. Committed to applying technical skills and continuously learning to deliver impactful solutions in a professional environment.</p>
-          </div>
-          {/* Red Box */}
-          <div className=' w-full h-auto max-h-[50vh] flex-1 flex flex-row md:flex-col overflow-y-auto overflow-x-clip items-center justify-start'>
-            <div className={`w-full h-full flex flex-row overflow-y-auto`}>
-              <p className='h-full w-1/2 md:w-full p-1 text-sm md:text-lg'>this is a test paragraph</p>
-              <p className='h-full w-1/2 md:w-full p-1 text-sm md:text-lg'>this is a test paragraph</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
       {/*Academic Certificates and Information*/}
       <div className={bgBase}>
         
@@ -186,63 +190,46 @@ const App = () => {
       {/*Project Portfolio*/}
       <div className='w-screen h-screen snap-start flex flex-col overflow-y-auto overflow-x-hidden'>
       <div className={bgBase}>
-        
-        <div className='w-full h-[100vh] items-center justify-center flex flex-col'>
-          <div className={`${mncontBase} gap-2 flex flex-col items-center justify-center`}>
-          <h1 className={`${dkCont} ${dkTxt} ${dkCont} w-full text-3xl self-start font-bold py-2`}>Projects</h1>
-          <div className=' w-full min-h-[80%] flex items-center justify-center overflow-hidden'>
-              {viewType === 'embed' && viewSource && (
-                <iframe
-                  src={viewSource}
-                  className='w-full h-full border-none'
-                  title='Embedded Site'
-                ></iframe>
-              )}
-              {viewType === 'gallery' && Array.isArray(viewSource) && (
-                <div className='w-full h-full grid grid-cols-2 md:grid-cols-3 gap-2 overflow-auto p-2'>
-                  {viewSource.map((item, idx) =>
-                    item.endsWith('.mp4') ? (
-                      <video key={idx} controls className='w-full rounded'>
-                        <source src={item} type='video/mp4' />
-                      </video>
-                    ) : (
-                      <img
-                        key={idx}
-                        src={item}
-                        alt={`media-${idx}`}
-                        className='w-full rounded'
-                      />
-                    )
+            <div className='w-full h-[100vh] items-center justify-center flex flex-col'>
+              <div className={`${mncontBase} gap-2 flex flex-col items-center justify-center`}>
+                <h1 className={`${dkCont} ${dkTxt} ${dkCont} w-full text-3xl self-start font-bold py-2`}>Projects</h1>
+                <div className=' w-full min-h-[80%] flex items-center justify-center overflow-hidden'>
+                  {viewType === 'embed' && viewSource && (
+                    <iframe
+                      src={viewSource}
+                      className='w-full h-full border-none'
+                      title='Embedded Site'
+                    ></iframe>
+                  )}
+                  {viewType === 'gallery' && Array.isArray(viewSource) && (
+                    <div className="w-full h-full"> {/* Container for the sliding gallery */}
+                      <SlidingGallery items={viewSource} />
+                    </div>
+                  )}
+                  {!viewType && (
+                    <div className={`${ltTxt} flex flex-col items-center justify-center`}>
+                      <i className={`fa-solid fa-diagram-project text-5xl md:text-8xl`} aria-label="No certificate selected"></i>
+                      <p className='md:text-2xl text-lg mt-2 md:mt-4'>No project selected</p>
+                    </div>
                   )}
                 </div>
-              )}
-              {!viewType && (
-                <div className={`${ltTxt} flex flex-col items-center justify-center`}>
-                  <i className={`fa-solid fa-diagram-project text-5xl md:text-8xl`} aria-label="No certificate selected"></i>
-                  <p className='md:text-2xl text-lg mt-2 md:mt-4'>No project selected</p>
+
+                <div className={`${dkCont} ${dkTxt} ${dkCont} p-2 w-full h-[20%] overflow-x-auto flex flex-row items-center justify-start`}>
+                  <button
+                    onClick={() => handleViewChange('embed', 'https://mock-spcf-edu.netlify.app')}
+                    className={`${btDkBase} w-auto min-w-[20%] h-auto`}>
+                    SPCF Website Frontend Improvement Mock-up
+                  </button>
+
+                  <button
+                    onClick={() => handleViewChange('gallery', battleBots)}
+                    className={`${btDkBase} w-auto min-w-[20%] h-auto`}>
+                    Battlebots
+                  </button>
                 </div>
-              )}
-          </div>
-
-              <div className={`${dkCont} ${dkTxt} ${dkCont} p-2 w-full h-[20%] overflow-x-auto flex flex-row items-center justify-start`}>
-                <button
-                  onClick={() => handleViewChange('embed', 'https://mock-spcf-edu.netlify.app')}
-                  className={`${btDkBase} w-auto min-w-[20%] h-auto`}>
-                  SPCF Website Frontend Improvement Mock-up
-                </button>
-
-                <button
-                  onClick={() => handleViewChange('gallery', gallery1)}
-                  className={`${btDkBase} w-auto min-w-[20%] h-auto`}>
-                  Gallery
-                </button>
               </div>
-
+            </div>
           </div>
-          
-        </div>
-        
-      </div>
 
       <div className={`${ltCont} ${dkTxt} w-full min-h-[10vh] snap-none flex items-center justify-center`}>
           <div className={`${dkCont} w-full h-full p-2`}>
