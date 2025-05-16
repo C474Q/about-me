@@ -73,7 +73,7 @@ const App = () => {
         </div>
 
         <div className='w-full h-full flex items-center justify-center'>
-          <div className={`${mncontBase} flex flex-col md:flex-row gap-2`}>
+          <div className={`${mncontBase} flex flex-col lg:flex-row gap-2`}>
             {/* First Column (Personal Info & Skills) */}
             <div className='flex-1 flex flex-col md:gap-2 items-start justify-start md:justify-start'>
               {/* Personal Info Row */}
@@ -85,7 +85,7 @@ const App = () => {
                   backgroundPosition: 'center',
                 }}></div>
                 <div className='h-full w-full'>
-                  <h1 className={`${ltCont} ${ltTxt} p-2 w-full text-md md:text-3xl lg:text-5xl font-bold`}>Cataquian, Ivan Joshua</h1>
+                  <h1 className={`${ltCont} ${ltTxt} p-2 w-full text-md md:text-3xl lg:text-5xl font-bold`}>Cataquian, Ivan Joshua D.</h1>
                 </div>
               </div>
               {/* Skills Row */}
@@ -107,18 +107,39 @@ const App = () => {
             </div>
 
             {/* Second Column (Personal Background) */}
-            <div className={`${ltCont} ${ltTxt} md:w-1/2 flex flex-col items-center justify-start`}>
+            <div className={`${ltCont} ${ltTxt} lg:w-1/2 flex flex-col items-center justify-start`}>
               <h1 className={`${dkCont} ${dkTxt} rounded-sm w-full p-2 font-black text-xl md:text-3xl`}>Personal Background</h1>
-              <div className='w-full h-full p-2 gap-2 flex flex-col md:flex-col items-center justify-start overflow-y-auto'> {/* Changed to flex-col */}
+              <div className='w-full h-full p-2 gap-2 flex flex-row lg:flex-col items-center justify-start overflow-y-auto'> {/* Changed to flex-col */}
                 {/* Yellow Box */}
                 <div className='w-full h-auto max-h-[50vh] flex-1 flex flex-col overflow-y-auto overflow-x-clip p-1 gap-0.5 items-start justify-start'>
-                  <p className='h-auto w-full p-2 text-[2vh] md:text-lg'>A motivated Computer Engineering graduate from Holy Angel University with a strong foundation in programming (Java, C++, Python) and network systems. Eager to contribute to projects involving software development, network security, and system troubleshooting. Committed to applying technical skills and continuously learning to deliver impactful solutions in a professional environment.</p>
+                  <p className='h-auto w-full p-2 text-[2vh] lg:text-lg overflow-y-auto'>A motivated Computer Engineering graduate from Holy Angel University with a strong foundation in programming (Java, C++, Python) and network systems. Eager to contribute to projects involving software development, network security, and system troubleshooting. Committed to applying technical skills and continuously learning to deliver impactful solutions in a professional environment.</p>
                 </div>
                 {/* Red Box */}
-                <div className=' w-full h-auto max-h-[50vh] flex-1 flex flex-row md:flex-col overflow-y-auto overflow-x-clip items-center justify-start'>
-                  <div className={`w-full h-full flex flex-row overflow-y-auto`}>
-                    <p className='h-full w-1/2 md:w-full p-1 text-sm md:text-lg'> </p>
-                    <p className='h-full w-1/2 md:w-full p-1 text-sm md:text-lg'> </p>
+                <div className='w-full h-auto max-h-[50vh] flex-1 flex flex-col overflow-y-auto overflow-x-clip items-start justify-start p-2 gap-4'> {/* Changed to flex-col and items-start, added padding and gap */}
+                  {/* Social Media Links */}
+                  <div className='flex flex-row items-center justify-start gap-4'>
+                    <a href="https://www.linkedin.com/in/ivan-joshua-cataquian-484bb6330/" target="_blank" rel="noopener noreferrer" className="text-2xl"> {/* Increased font size */}
+                      <i className="fa-brands fa-linkedin align-middle"></i>
+                      <span className="sr-only">LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/C474Q" target="_blank" rel="noopener noreferrer" className="text-2xl"> {/* Increased font size */}
+                      <i className="fa-brands fa-github align-middle"></i>
+                      <span className="sr-only">GitHub</span>
+                    </a>
+                  </div>
+
+                  {/* Contact Information */}
+                  <div className='flex flex-col items-start justify-start gap-2 text-sm md:text-2xl'> {/* Increased font size and aligned left */}
+                    <a href="mailto:cataquianivan@gmail.com" className="leading-none">
+                      <i className="fa-regular fa-envelope mr-2 align-middle"></i> {/* Increased mr */}
+                      cataquianivan@gmail.com
+                    </a>
+                    {+639292134985 && (
+                      <a href={`tel:${+639292134985}`} className="leading-none">
+                        <i className="fa-solid fa-phone mr-2 align-middle"></i> {/* Increased mr */}
+                        {+639292134985}
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
@@ -233,33 +254,37 @@ const App = () => {
                 <div className={`${dkCont} ${dkTxt} ${dkCont} p-2 w-full h-[20%] overflow-x-auto flex flex-row items-center justify-start`}>
                   <button
                     onClick={() => handleViewChange('embed', 'https://mock-spcf-edu.netlify.app')}
-                    className={`${btDkBase} w-auto min-w-[20%] h-auto`}>
+                    className={`${btDkBase} w-auto min-w-[20%] h-auto text-[8px] md:text-md`}>
                     SPCF Website Frontend Improvement Mock-up
                   </button>
 
                   <button
                     onClick={() => handleViewChange('gallery', battleBots)}
-                    className={`${btDkBase} w-auto min-w-[20%] h-auto`}>
+                    className={`${btDkBase} w-auto min-w-[20%] h-auto text-[8px] md:text-md`}>
                     Battlebots
                   </button>
 
                   <button
                     onClick={() => handleViewChange('pdf', 'https://drive.google.com/uc?id=10DFK4uIDxNduGiW40fdPu21aZXP0tpK4&export=download')}
-                    className={`${btDkBase} w-auto min-w-[20%] h-auto`}
+                    className={`${btDkBase} w-auto min-w-[20%] h-auto text-[8px] md:text-md`}
                     >
-                    Sample PDF
-                    </button>
+                    BaybAIn Sign Language Translator
+                  </button>
 
                 </div>
               </div>
             </div>
           </div>
 
-      <div className={`${ltCont} ${dkTxt} w-full min-h-[10vh] snap-none flex items-center justify-center`}>
-          <div className={`${dkCont} w-full h-full p-2`}>
-            <p>This is the Footer</p>
-          </div>
-      </div>
+        <footer className={`${ltCont} ${dkTxt} w-full min-h-[10vh] snap-none flex items-center justify-center`}>
+            <div className={`${dkCont} w-full h-full p-2`}>
+              <div className={`w-full h-full flex flex-col`}>
+                  <p className="text-center text-sm" style={{ margin: 0, padding: '0.5em 0' }}>
+                  © {new Date().getFullYear()} Cataquian, Ivan Joshua D. All rights reserved.
+                </p>
+              </div>
+            </div>
+        </footer>
       </div>
 
     </div>

@@ -24,8 +24,8 @@ const ThemeToggle = () => {
     <button
       onClick={toggleTheme}
       className={`min-w-[3vw] aspect-square flex items-center justify-center p-2 rounded-full transition-colors duration-300
-                  ${isDarkMode ? 'bg-gray-800 text-gray-200 hover:bg-gray-700 focus:ring-2 focus:ring-gray-600'
-                             : 'bg-[#a10a01] text-[#d6ccc4] hover:bg-[#780801] focus:ring-2 focus:[#464847]'}`}
+                  ${isDarkMode ? 'bg-[#d6ccc4] text-[#787a79] hover:bg-[#780801] hover:text-[#d6ccc4] focus:ring-2 focus:ring-[#d6ccc4]'
+                             : 'bg-[#a10a01] text-[#d6ccc4] hover:bg-[#d6ccc4] hover:text-[#787a79] focus:ring-2 focus:ring-[#464847]'}`}
       aria-label={isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
     >
       <FontAwesomeIcon icon={isDarkMode ? faMoon : faSun} className="h-5 w-5" />
